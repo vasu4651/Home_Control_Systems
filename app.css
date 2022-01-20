@@ -60,3 +60,22 @@ button{
     width:  50px;
     height: 50px;
 }
+
+.fan{
+    width:  50px;
+    height: 50px;
+    margin: 0px 0px 10px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#fanon{
+    animation: rotation 0.8s linear infinite;
+}

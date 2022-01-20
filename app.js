@@ -4,6 +4,8 @@ let lightBtnOff = document.querySelector('#lightBtnOff');
 let fanBtnOn = document.querySelector('#fanBtnOn');
 let fanBtnOff = document.querySelector('#fanBtnOff');
 let bulbImage = document.querySelector('#bulbImage');
+let fanImage = document.querySelector('#fanImage');
+
 
 // Temperature
 function setTemperature(){
@@ -43,11 +45,13 @@ function switchlightOff(data){
 }
 
 function switchfanOn(data){
+    fanImage.innerHTML = `<img class="fan" id="fanon" src="/img/fan.png" alt="">`
     console.log('Fan switched on');
     console.log(data);
 }
 
 function switchfanOff(data){
+    fanImage.innerHTML = `<img class="fan" id="fanoff" src="/img/fan.png" alt="">`;
     console.log('Fan switched off');
     console.log(data);
 }
