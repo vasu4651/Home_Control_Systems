@@ -3,6 +3,7 @@ let lightBtnOn = document.querySelector('#lightBtnOn');
 let lightBtnOff = document.querySelector('#lightBtnOff');
 let fanBtnOn = document.querySelector('#fanBtnOn');
 let fanBtnOff = document.querySelector('#fanBtnOff');
+let bulbImage = document.querySelector('#bulbImage');
 
 // Temperature
 function setTemperature(){
@@ -13,7 +14,7 @@ function setTemperature(){
     .then(data => {
         if(data.feeds[0].field3 != null)
         {
-            document.querySelector('#tempSpan').innerHTML = data.feeds[0].field3 + " F";
+            document.querySelector('#tempSpan').innerHTML = data.feeds[0].field3 + ` F`;
         }
     })
 }
@@ -30,11 +31,13 @@ refreshIcon.addEventListener('click', () => {
 
 // Light and Fan
 function switchlightOn(data){
+    bulbImage.innerHTML = `<img class="bulb" src="/img/onbulb.png" alt="">`;
     console.log('Light switched on');
     console.log(data);
 }
 
 function switchlightOff(data){
+    bulbImage.innerHTML = `<img class="bulb" src="/img/offbulb.png" alt="">`;
     console.log('Light switched off');
     console.log(data);
 }
