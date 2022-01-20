@@ -2,7 +2,18 @@
     box-sizing: border-box;
 }
 
-
 h1{
     color: #050;
+}
+
+.fas{
+    cursor: pointer;
+}
+
+#refreshIcon{
+    transition: 0.5s all;
+}
+
+#refreshIcon:active{
+    transform: rotate(180deg);
 }

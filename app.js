@@ -1,8 +1,34 @@
+let refreshIcon = document.querySelector('#refreshIcon');
 let lightBtnOn = document.querySelector('#lightBtnOn');
 let lightBtnOff = document.querySelector('#lightBtnOff');
 let fanBtnOn = document.querySelector('#fanBtnOn');
 let fanBtnOff = document.querySelector('#fanBtnOff');
- 
+
+// Temperature
+function setTemperature(){
+    fetch('https://api.thingspeak.com/channels/1636583/fields/3.json?results=1')
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        if(data.feeds[0].field3 != null)
+        {
+            document.querySelector('#tempSpan').innerHTML = data.feeds[0].field3 + " F";
+        }
+    })
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTemperature();
+});
+
+refreshIcon.addEventListener('click', () => {
+    console.log('f');
+    setTemperature();
+})
+
+
+// Light and Fan
 function switchlightOn(data){
     console.log('Light switched on');
     console.log(data);
