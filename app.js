@@ -2,7 +2,7 @@ let lightBtnOn = document.querySelector('#lightBtnOn');
 let lightBtnOff = document.querySelector('#lightBtnOff');
 let fanBtnOn = document.querySelector('#fanBtnOn');
 let fanBtnOff = document.querySelector('#fanBtnOff');
-
+ 
 function switchlightOn(data){
     console.log('Light switched on');
     console.log(data);
