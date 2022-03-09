@@ -16,7 +16,7 @@ function setTemperature(){
     .then(data => {
         if(data.feeds[0].field3 != null)
         {
-            document.querySelector('#tempSpan').innerHTML = data.feeds[0].field3 + ` F`;
+            document.querySelector('#tempSpan').innerHTML = data.feeds[0].field3 + ` °C`;
         }
     })
 }
